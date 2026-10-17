@@ -1,0 +1,22 @@
+name: Validar projeto Godot
+
+on:
+  push:
+    paths:
+      - "game/**"
+      - ".github/workflows/validar-jogo.yml"
+  workflow_dispatch:
+
+jobs:
+  verificar-arquivos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o repositório
+        uses: action/checkout@v4
+
+        - name: Verificar arquivos do jogo
+          run: |
+           test -f game/project.godot
+           test -f game/main.tscn
+           echo "Arquivos principais encontrados!"
