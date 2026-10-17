@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Baixar o repositório
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
-        - name: Verificar arquivos do jogo
-          run: |
-           test -f game/project.godot
-           test -f game/main.tscn
-           echo "Arquivos principais encontrados!"
+      - name: Verificar arquivos do jogo
+        run: |
+          test -f game/project.godot
+          test -f game/main.tscn
+          echo "Arquivos principais encontrados!"
